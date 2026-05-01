@@ -1,0 +1,52 @@
+<svg width="1000" height="760" viewBox="0 0 1000 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="wave-contour" d="M250 740 C355 678 420 575 548 552 C640 536 650 516 688 456 C744 370 752 245 840 184 C920 128 1010 142 1095 228"/>
+  </defs>
+  <g stroke="#000" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#wave-contour"/>
+    <use href="#wave-contour" transform="translate(-0.9 11.5)"/>
+    <use href="#wave-contour" transform="translate(-1.8 23)"/>
+    <use href="#wave-contour" transform="translate(-2.7 34.5)"/>
+    <use href="#wave-contour" transform="translate(-3.6 46)"/>
+    <use href="#wave-contour" transform="translate(-4.5 57.5)"/>
+    <use href="#wave-contour" transform="translate(-5.4 69)"/>
+    <use href="#wave-contour" transform="translate(-6.3 80.5)"/>
+    <use href="#wave-contour" transform="translate(-7.2 92)"/>
+    <use href="#wave-contour" transform="translate(-8.1 103.5)"/>
+    <use href="#wave-contour" transform="translate(-9 115)"/>
+    <use href="#wave-contour" transform="translate(-9.9 126.5)"/>
+    <use href="#wave-contour" transform="translate(-10.8 138)"/>
+    <use href="#wave-contour" transform="translate(-11.7 149.5)"/>
+    <use href="#wave-contour" transform="translate(-12.6 161)"/>
+    <use href="#wave-contour" transform="translate(-13.5 172.5)"/>
+    <use href="#wave-contour" transform="translate(-14.4 184)"/>
+    <use href="#wave-contour" transform="translate(-15.3 195.5)"/>
+    <use href="#wave-contour" transform="translate(-16.2 207)"/>
+    <use href="#wave-contour" transform="translate(-17.1 218.5)"/>
+    <use href="#wave-contour" transform="translate(-18 230)"/>
+    <use href="#wave-contour" transform="translate(-18.9 241.5)"/>
+    <use href="#wave-contour" transform="translate(-19.8 253)"/>
+    <use href="#wave-contour" transform="translate(-20.7 264.5)"/>
+    <use href="#wave-contour" transform="translate(-21.6 276)"/>
+    <use href="#wave-contour" transform="translate(-22.5 287.5)"/>
+    <use href="#wave-contour" transform="translate(-23.4 299)"/>
+    <use href="#wave-contour" transform="translate(-24.3 310.5)"/>
+    <use href="#wave-contour" transform="translate(-25.2 322)"/>
+    <use href="#wave-contour" transform="translate(-26.1 333.5)"/>
+    <use href="#wave-contour" transform="translate(-27 345)"/>
+    <use href="#wave-contour" transform="translate(-27.9 356.5)"/>
+    <use href="#wave-contour" transform="translate(-28.8 368)"/>
+    <use href="#wave-contour" transform="translate(-29.7 379.5)"/>
+    <use href="#wave-contour" transform="translate(-30.6 391)"/>
+    <use href="#wave-contour" transform="translate(-31.5 402.5)"/>
+    <use href="#wave-contour" transform="translate(-32.4 414)"/>
+    <use href="#wave-contour" transform="translate(-33.3 425.5)"/>
+    <use href="#wave-contour" transform="translate(-34.2 437)"/>
+    <use href="#wave-contour" transform="translate(-35.1 448.5)"/>
+    <use href="#wave-contour" transform="translate(-36 460)"/>
+    <use href="#wave-contour" transform="translate(-36.9 471.5)"/>
+    <use href="#wave-contour" transform="translate(-37.8 483)"/>
+    <use href="#wave-contour" transform="translate(-38.7 494.5)"/>
+    <use href="#wave-contour" transform="translate(-39.6 506)"/>
+  </g>
+</svg>
