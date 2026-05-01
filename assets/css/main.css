@@ -231,8 +231,6 @@ h3 {
 .intro {
   position: relative;
   isolation: isolate;
-  --intro-gutter: max(1.5rem, calc(50vw - 550px));
-  --intro-art-right: max(0rem, calc(var(--intro-gutter) - 1.5rem));
   min-height: 37.2rem;
   overflow: hidden;
   background: var(--bg);
@@ -308,11 +306,11 @@ h3 {
 
 .intro-art {
   position: absolute;
-  right: var(--intro-art-right);
-  bottom: 0;
+  top: 2.5rem;
+  right: -6.25rem;
   z-index: 0;
-  width: clamp(44rem, 100vw, 68.5rem);
-  aspect-ratio: 1096 / 595;
+  width: min(61.25rem, 68vw);
+  aspect-ratio: 980 / 540;
   pointer-events: none;
 }
 
@@ -321,20 +319,12 @@ h3 {
   inset: 0;
   z-index: 1;
   display: block;
-  background-color: #ff1f1f;
-  -webkit-mask-image: url("../images/hero-wave.svg");
-  mask-image: url("../images/hero-wave.svg");
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  opacity: 0.72;
+  background: url("../images/hero-network.svg") center / 100% 100% no-repeat;
+  opacity: 1;
 }
 
 :root[data-theme="dark"] .intro-art span {
-  opacity: 0.72;
+  opacity: 0.56;
 }
 
 .home-publications {
@@ -575,12 +565,13 @@ h3 {
   }
 
   .intro-art {
-    right: 0;
-    bottom: 0;
+    top: 20.5rem;
+    right: -22.5rem;
+    width: 53.125rem;
   }
 
   .intro-art span {
-    opacity: 0.72;
+    opacity: 0.78;
   }
 
   .publication-card {
@@ -632,8 +623,9 @@ h3 {
   }
 
   .intro-art {
-    right: 0;
-    bottom: 0;
+    top: 23rem;
+    right: -29rem;
+    width: 52rem;
   }
 
   .intro-art span {

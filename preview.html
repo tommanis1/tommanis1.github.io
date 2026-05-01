@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abstract Right-Side Shape</title>
+
+  <style>
+    :root {
+      --bg: #f8fbfa;
+      --green: #087963;
+      --green-soft: rgba(8, 121, 99, 0.14);
+      --green-faint: rgba(8, 121, 99, 0.07);
+      --line-soft: rgba(8, 121, 99, 0.24);
+      --text: #17201c;
+      --muted: #5f6864;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f6faf8 100%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 42%;
+      min-width: 420px;
+      padding: 120px 0 0 7vw;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.8rem, 6vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .accent {
+      width: 64px;
+      height: 4px;
+      margin: 28px 0 24px;
+      background: var(--green);
+      border-radius: 999px;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      font-size: 1.45rem;
+      color: var(--text);
+    }
+
+    .bio {
+      max-width: 460px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .abstract-graphic {
+      position: absolute;
+      z-index: 1;
+      right: -80px;
+      top: 40px;
+      width: min(960px, 68vw);
+      height: 540px;
+      pointer-events: none;
+    }
+
+    .abstract-graphic svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+
+    /*
+      Soft translucent background blobs.
+      These are what make the diagram feel less rigid.
+    */
+    .blob {
+      fill: var(--green-faint);
+    }
+
+    .blob-2 {
+      fill: rgba(8, 121, 99, 0.09);
+    }
+
+    /*
+      Thin pale routing lines.
+      These give the shape its abstract circuit/tree feeling.
+    */
+    .route-soft {
+      fill: none;
+      stroke: var(--line-soft);
+      stroke-width: 1.2;
+    }
+
+    /*
+      Main darker green tree lines.
+      The round linecap makes them feel smoother and more organic.
+    */
+    .route-main {
+      fill: none;
+      stroke: var(--green);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .route-faint {
+      fill: none;
+      stroke: rgba(8, 121, 99, 0.12);
+      stroke-width: 1.1;
+      stroke-linecap: round;
+    }
+
+    /*
+      Dots and diamonds along the routes.
+    */
+    .node {
+      fill: var(--green);
+    }
+
+    .node-soft {
+      fill: rgba(8, 121, 99, 0.35);
+    }
+
+    .node-open {
+      fill: #f8fbfa;
+      stroke: var(--green);
+      stroke-width: 1.6;
+    }
+
+    .diamond {
+      fill: var(--green);
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    /*
+      Dotted matrix texture.
+    */
+    .dot {
+      fill: rgba(8, 121, 99, 0.34);
+    }
+
+    .dot-faint {
+      fill: rgba(8, 121, 99, 0.16);
+    }
+
+    /*
+      Small animation is optional.
+      Remove this block if you want it completely static.
+    */
+    .route-main,
+    .route-soft,
+    .route-faint {
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+      animation: draw 1.6s ease-out forwards;
+    }
+
+    .node,
+    .node-soft,
+    .node-open,
+    .diamond {
+      opacity: 0;
+      animation: appear 0.5s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes appear {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero-content {
+        width: auto;
+        min-width: 0;
+        padding: 80px 28px 0;
+      }
+
+      .abstract-graphic {
+        top: 330px;
+        right: -360px;
+        width: 850px;
+        opacity: 0.75;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">PhD Student</p>
+      <h1>Tommaso<br />Pacciani</h1>
+      <div class="accent"></div>
+      <p class="subtitle">University of Amsterdam</p>
+      <p class="bio">
+        I work on programming language theory and systems, with a focus on
+        domain-specific languages, parsing, and compiling for high-performance
+        environments.
+      </p>
+    </div>
+
+    <div class="abstract-graphic" aria-hidden="true">
+      <svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- soft abstract background shapes -->
+        <path
+          class="blob"
+          d="M270 70
+             C365 20 505 65 615 10
+             C720 -45 850 5 875 110
+             C900 220 800 275 690 300
+             C575 327 515 400 430 390
+             C345 380 310 310 230 300
+             C150 290 105 225 145 160
+             C175 112 220 95 270 70Z"
+        />
+
+        <path
+          class="blob-2"
+          d="M610 330
+             C690 270 805 250 905 285
+             C1010 320 1020 455 920 505
+             C810 560 660 535 585 480
+             C520 430 545 380 610 330Z"
+        />
+
+        <path
+          class="blob"
+          d="M120 300
+             C180 260 230 305 250 355
+             C275 415 345 420 365 485
+             C385 550 280 590 180 540
+             C90 495 55 380 120 300Z"
+        />
+
+        <!-- faint background routes -->
+        <path
+          class="route-faint"
+          d="M520 -20
+             C520 55 480 75 430 88
+             C380 100 340 125 340 175
+             C340 230 390 230 440 230
+             L565 230
+             C610 230 620 250 620 290
+             L620 345
+             C620 385 645 405 685 405
+             L870 405"
+        />
+
+        <path
+          class="route-faint"
+          d="M675 -15
+             C670 70 620 85 585 115
+             C545 150 555 195 610 195
+             L730 195
+             C775 195 795 220 795 260
+             C795 300 820 320 860 320
+             L980 320"
+        />
+
+        <path
+          class="route-faint"
+          d="M725 72
+             L835 72
+             C885 72 895 40 915 -12"
+        />
+
+        <path
+          class="route-faint"
+          d="M250 382
+             C310 382 315 425 370 425
+             L460 425"
+        />
+
+        <!-- dotted textures -->
+        <g transform="translate(260 175)">
+          <circle class="dot-faint" cx="0" cy="0" r="1.4" />
+          <circle class="dot-faint" cx="18" cy="0" r="1.4" />
+          <circle class="dot-faint" cx="36" cy="0" r="1.4" />
+          <circle class="dot-faint" cx="54" cy="0" r="1.4" />
+          <circle class="dot-faint" cx="72" cy="0" r="1.4" />
+          <circle class="dot-faint" cx="90" cy="0" r="1.4" />
+
+          <circle class="dot-faint" cx="0" cy="18" r="1.4" />
+          <circle class="dot-faint" cx="18" cy="18" r="1.4" />
+          <circle class="dot-faint" cx="36" cy="18" r="1.4" />
+          <circle class="dot-faint" cx="54" cy="18" r="1.4" />
+          <circle class="dot-faint" cx="72" cy="18" r="1.4" />
+          <circle class="dot-faint" cx="90" cy="18" r="1.4" />
+        </g>
+
+        <g transform="translate(365 310)">
+          <circle class="dot" cx="0" cy="0" r="1.5" />
+          <circle class="dot" cx="18" cy="0" r="1.5" />
+          <circle class="dot" cx="36" cy="0" r="1.5" />
+          <circle class="dot" cx="54" cy="0" r="1.5" />
+
+          <circle class="dot" cx="0" cy="18" r="1.5" />
+          <circle class="dot" cx="18" cy="18" r="1.5" />
+          <circle class="dot" cx="36" cy="18" r="1.5" />
+          <circle class="dot" cx="54" cy="18" r="1.5" />
+
+          <circle class="dot" cx="0" cy="36" r="1.5" />
+          <circle class="dot" cx="18" cy="36" r="1.5" />
+          <circle class="dot" cx="36" cy="36" r="1.5" />
+          <circle class="dot" cx="54" cy="36" r="1.5" />
+
+          <circle class="dot" cx="0" cy="54" r="1.5" />
+          <circle class="dot" cx="18" cy="54" r="1.5" />
+          <circle class="dot" cx="36" cy="54" r="1.5" />
+          <circle class="dot" cx="54" cy="54" r="1.5" />
+        </g>
+
+        <g transform="translate(790 175)">
+          <circle class="dot" cx="0" cy="0" r="1.5" />
+          <circle class="dot" cx="18" cy="0" r="1.5" />
+          <circle class="dot" cx="36" cy="0" r="1.5" />
+
+          <circle class="dot" cx="0" cy="18" r="1.5" />
+          <circle class="dot" cx="18" cy="18" r="1.5" />
+          <circle class="dot" cx="36" cy="18" r="1.5" />
+
+          <circle class="dot" cx="0" cy="36" r="1.5" />
+          <circle class="dot" cx="18" cy="36" r="1.5" />
+          <circle class="dot" cx="36" cy="36" r="1.5" />
+        </g>
+
+        <!-- small decorative faint arrows/dots -->
+        <path
+          class="route-faint"
+          d="M805 130 L850 130"
+        />
+        <circle class="node-open" cx="812" cy="130" r="6" opacity="0.4" />
+        <circle class="node-soft" cx="828" cy="130" r="2" />
+        <circle class="node-soft" cx="842" cy="130" r="2" />
+
+        <!-- main abstract decision-tree route -->
+        <path
+          class="route-main"
+          d="M170 255
+             L290 255
+             C345 255 335 355 405 355
+             L455 355"
+        />
+
+        <path
+          class="route-main"
+          d="M320 220
+             C390 220 370 110 455 110
+             L610 110
+             C655 110 660 140 660 175
+             L660 220
+             C660 250 685 255 715 255
+             L925 255"
+        />
+
+        <path
+          class="route-main"
+          d="M405 220
+             L550 220
+             L550 315
+             C550 345 575 345 600 345
+             L785 345
+             C815 345 830 365 860 365
+             L970 365"
+        />
+
+        <path
+          class="route-main"
+          d="M660 220
+             L765 220
+             C805 220 820 238 820 275
+             L820 315
+             C820 348 845 355 880 355
+             L945 355"
+        />
+
+        <path
+          class="route-soft"
+          d="M550 315
+             C550 375 570 405 630 405
+             L690 405
+             C725 405 725 435 760 435
+             L900 435"
+        />
+
+        <path
+          class="route-soft"
+          d="M610 110
+             L720 110
+             C770 110 780 140 780 180
+             C780 215 805 220 840 220
+             L940 220"
+        />
+
+        <!-- nodes -->
+        <circle class="node-soft" cx="150" cy="255" r="5" />
+        <circle class="node-open" cx="185" cy="255" r="7" />
+
+        <circle class="node" cx="350" cy="220" r="10" />
+        <circle class="node-open" cx="470" cy="110" r="8" />
+        <circle class="node-soft" cx="540" cy="110" r="6" />
+
+        <circle class="node" cx="550" cy="220" r="7" />
+
+        <rect class="diamond" x="612" y="102" width="14" height="14" transform="rotate(45 619 109)" />
+        <rect class="diamond" x="613" y="213" width="14" height="14" transform="rotate(45 620 220)" />
+        <rect class="diamond" x="586" y="338" width="14" height="14" transform="rotate(45 593 345)" />
+        <rect class="diamond" x="785" y="213" width="14" height="14" transform="rotate(45 792 220)" />
+        <rect class="diamond" x="792" y="338" width="18" height="18" transform="rotate(45 801 347)" />
+
+      </svg>
+    </div>
+  </section>
+</body>
+</html>
