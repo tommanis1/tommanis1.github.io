@@ -231,6 +231,8 @@ h3 {
 .intro {
   position: relative;
   isolation: isolate;
+  --intro-gutter: max(1.5rem, calc(50vw - 550px));
+  --intro-art-right: max(0rem, calc(var(--intro-gutter) - 1.5rem));
   min-height: 38rem;
   overflow: hidden;
   background: var(--bg);
@@ -306,11 +308,12 @@ h3 {
 
 .intro-art {
   position: absolute;
-  right: -6%;
-  top: 0.65rem;
+  right: var(--intro-art-right);
+  top: clamp(0.65rem, 2vw, 1.35rem);
   z-index: 0;
-  width: min(925px, 86vw);
-  height: 610px;
+  width: clamp(42rem, 51vw, 58rem);
+  aspect-ratio: 1000 / 760;
+  height: auto;
   pointer-events: none;
   transform: rotate(-1.5deg);
   transform-origin: 58% 50%;
@@ -585,10 +588,10 @@ h3 {
   }
 
   .intro-art {
-    right: -18%;
-    top: 7.8rem;
-    width: 112%;
-    height: 520px;
+    right: 0;
+    top: clamp(6.5rem, 13vw, 8rem);
+    width: clamp(38rem, 112vw, 52rem);
+    height: auto;
   }
 
   .intro-art span {
@@ -644,10 +647,10 @@ h3 {
   }
 
   .intro-art {
-    right: -52%;
-    top: 15.5rem;
-    width: 185%;
-    height: 400px;
+    right: 0;
+    top: clamp(14.5rem, 50vw, 17.5rem);
+    width: clamp(32rem, 158vw, 44rem);
+    height: auto;
   }
 
   .intro-art span {
