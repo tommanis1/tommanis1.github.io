@@ -5,21 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
+    <script>
+      (function () {
+        var savedTheme = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
 
     <header class="site-header">
-      <nav class="site-nav{% if page.url == '/' %} site-nav-home{% endif %}" aria-label="Main navigation">
-        {% unless page.url == "/" %}
-          <a class="site-title" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
-        {% endunless %}
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="site-title" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} home">
+          {{ site.author.initials | default: site.author.name }}
+        </a>
         <div class="nav-links">
           {% for item in site.navigation %}
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% assign is_active = false %}
+            {% if page.url == item.url %}
+              {% assign is_active = true %}
+            {% elsif page.url == "/" and item.url contains "#publications" %}
+              {% assign is_active = true %}
+            {% endif %}
+            <a{% if is_active %} class="active"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a>
           {% endfor %}
         </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="icon icon-moon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.6 8.6 0 1 0 20.5 14.2Z"></path>
+          </svg>
+          <svg class="icon icon-sun" aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2.1M12 19.9V22M4.1 4.1l1.5 1.5M18.4 18.4l1.5 1.5M2 12h2.1M19.9 12H22M4.1 19.9l1.5-1.5M18.4 5.6l1.5-1.5"></path>
+          </svg>
+        </button>
       </nav>
     </header>
 
@@ -28,6 +52,26 @@
     </main>
 
     <footer class="site-footer">
+      <p>&copy; 2025 {{ site.author.name }} <span aria-hidden="true">&middot;</span> {{ site.author.affiliation }}</p>
     </footer>
+    <script>
+      (function () {
+        var button = document.querySelector(".theme-toggle");
+        if (!button) return;
+
+        function setPressed() {
+          button.setAttribute("aria-pressed", document.documentElement.dataset.theme === "dark");
+        }
+
+        button.addEventListener("click", function () {
+          var nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = nextTheme;
+          localStorage.setItem("theme", nextTheme);
+          setPressed();
+        });
+
+        setPressed();
+      })();
+    </script>
   </body>
 </html>

@@ -5,8 +5,12 @@ baseurl: ""
 
 author:
   name: Tommaso Pacciani
+  initials: TP
+  role: PhD Student
   affiliation: University of Amsterdam
   email: ""
+  github: "https://github.com/tommanis1"
+  scholar: "https://scholar.google.com/scholar?q=Tommaso+Pacciani"
 
 navigation:
   - title: Publications
