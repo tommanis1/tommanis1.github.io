@@ -1,8 +1,8 @@
-<svg width="1000" height="760" viewBox="0 0 1000 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1096" height="595" viewBox="0 0 1096 595" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <path id="wave-contour" d="M250 740 C355 678 420 575 548 552 C640 536 650 516 688 456 C744 370 752 245 840 184 C920 128 1010 142 1095 228"/>
+    <path id="wave-contour" d="M516.0 595.0 C526.7 576.3 537.3 557.7 548.0 539.0 C560.7 516.7 573.3 481.7 586.0 472.0 C614.0 450.7 642.0 454.6 670.0 446.0 C686.7 440.9 703.3 441.0 720.0 431.0 C733.3 423.0 746.7 410.5 760.0 392.0 C773.3 373.5 786.7 348.7 800.0 320.0 C816.7 284.1 833.3 225.6 850.0 198.0 C876.0 154.9 902.0 119.3 928.0 108.0 C958.0 95.0 988.0 112.9 1018.0 125.0 C1044.0 135.5 1070.0 159.0 1096.0 176.0"/>
   </defs>
-  <g stroke="#000" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#fff" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round">
     <use href="#wave-contour"/>
     <use href="#wave-contour" transform="translate(-0.9 11.5)"/>
     <use href="#wave-contour" transform="translate(-1.8 23)"/>

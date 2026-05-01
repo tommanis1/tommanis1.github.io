@@ -233,7 +233,7 @@ h3 {
   isolation: isolate;
   --intro-gutter: max(1.5rem, calc(50vw - 550px));
   --intro-art-right: max(0rem, calc(var(--intro-gutter) - 1.5rem));
-  min-height: 38rem;
+  min-height: 37.2rem;
   overflow: hidden;
   background: var(--bg);
 }
@@ -309,14 +309,11 @@ h3 {
 .intro-art {
   position: absolute;
   right: var(--intro-art-right);
-  top: clamp(0.65rem, 2vw, 1.35rem);
+  bottom: 0;
   z-index: 0;
-  width: clamp(42rem, 51vw, 58rem);
-  aspect-ratio: 1000 / 760;
-  height: auto;
+  width: clamp(44rem, 100vw, 68.5rem);
+  aspect-ratio: 1096 / 595;
   pointer-events: none;
-  transform: rotate(-1.5deg);
-  transform-origin: 58% 50%;
 }
 
 .intro-art span {
@@ -324,30 +321,20 @@ h3 {
   inset: 0;
   z-index: 1;
   display: block;
-  background-color: var(--accent);
+  background-color: #ff1f1f;
   -webkit-mask-image: url("../images/hero-wave.svg");
   mask-image: url("../images/hero-wave.svg");
   -webkit-mask-position: center;
   mask-position: center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  opacity: 0.18;
-}
-
-.intro-art::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  background:
-    linear-gradient(to left, transparent 50%, var(--bg) 100%),
-    linear-gradient(to bottom, transparent 72%, var(--bg) 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  opacity: 0.72;
 }
 
 :root[data-theme="dark"] .intro-art span {
-  opacity: 0.14;
+  opacity: 0.72;
 }
 
 .home-publications {
@@ -589,13 +576,11 @@ h3 {
 
   .intro-art {
     right: 0;
-    top: clamp(6.5rem, 13vw, 8rem);
-    width: clamp(38rem, 112vw, 52rem);
-    height: auto;
+    bottom: 0;
   }
 
   .intro-art span {
-    opacity: 0.13;
+    opacity: 0.72;
   }
 
   .publication-card {
@@ -648,13 +633,11 @@ h3 {
 
   .intro-art {
     right: 0;
-    top: clamp(14.5rem, 50vw, 17.5rem);
-    width: clamp(32rem, 158vw, 44rem);
-    height: auto;
+    bottom: 0;
   }
 
   .intro-art span {
-    opacity: 0.1;
+    opacity: 0.72;
   }
 
   .home-publications {
