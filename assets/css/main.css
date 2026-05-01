@@ -306,11 +306,11 @@ h3 {
 
 .intro-art {
   position: absolute;
-  top: 2.5rem;
-  right: -6.25rem;
+  top: 1.9rem;
+  right: -7.5rem;
   z-index: 0;
-  width: min(61.25rem, 68vw);
-  aspect-ratio: 980 / 540;
+  width: min(65rem, 72vw);
+  aspect-ratio: 1040 / 560;
   pointer-events: none;
 }
 

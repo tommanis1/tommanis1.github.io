@@ -1,92 +1,134 @@
-<svg width="980" height="540" viewBox="0 0 980 540" xmlns="http://www.w3.org/2000/svg">
+<svg width="1040" height="560" viewBox="0 0 1040 560" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="first-blob-fade-gradient" x1="800" y1="0" x2="895" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="white"/>
-      <stop offset="0.28" stop-color="white"/>
-      <stop offset="0.68" stop-color="white" stop-opacity="0.28"/>
+    <radialGradient id="blob-top" cx="50%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#087963" stop-opacity="0.105"/>
+      <stop offset="0.62" stop-color="#087963" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#087963" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="blob-lower" cx="56%" cy="52%" r="72%">
+      <stop offset="0" stop-color="#087963" stop-opacity="0.13"/>
+      <stop offset="0.66" stop-color="#087963" stop-opacity="0.065"/>
+      <stop offset="1" stop-color="#087963" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="blob-left" cx="50%" cy="50%" r="72%">
+      <stop offset="0" stop-color="#087963" stop-opacity="0.09"/>
+      <stop offset="0.62" stop-color="#087963" stop-opacity="0.045"/>
+      <stop offset="1" stop-color="#087963" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="art-edge-fade" x1="0" y1="0" x2="1040" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="black"/>
+      <stop offset="0.14" stop-color="white"/>
+      <stop offset="0.88" stop-color="white"/>
       <stop offset="1" stop-color="black"/>
     </linearGradient>
-    <mask id="first-blob-fade" maskUnits="userSpaceOnUse" x="120" y="-50" width="790" height="470">
-      <rect x="120" y="-50" width="790" height="470" fill="url(#first-blob-fade-gradient)"/>
+
+    <linearGradient id="dot-fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="white"/>
+      <stop offset="0.8" stop-color="white"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <mask id="diagram-fade" maskUnits="userSpaceOnUse" x="0" y="0" width="1040" height="560">
+      <rect width="1040" height="560" fill="url(#art-edge-fade)"/>
     </mask>
+
+    <mask id="dot-grid-fade">
+      <rect width="180" height="130" fill="url(#dot-fade)"/>
+    </mask>
+
+    <pattern id="dots-faint" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.25" fill="#087963" fill-opacity="0.17"/>
+    </pattern>
+
+    <pattern id="dots-strong" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.35" fill="#087963" fill-opacity="0.42"/>
+    </pattern>
   </defs>
 
   <style>
-    .blob {
-      fill: #087963;
-      fill-opacity: 0.07;
-    }
-    .blob-2 {
-      fill: #087963;
-      fill-opacity: 0.09;
-    }
-    .route-main {
-      fill: none;
-      stroke: #087963;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .route-soft {
-      fill: none;
-      stroke: #087963;
-      stroke-opacity: 0.24;
-      stroke-width: 1.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .route-faint {
-      fill: none;
-      stroke: #087963;
-      stroke-opacity: 0.12;
-      stroke-width: 1.1;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .node { fill: #087963; }
-    .node-soft {
-      fill: #087963;
-      fill-opacity: 0.35;
-    }
-    .node-open {
-      fill: #f8fbfa;
-      stroke: #087963;
-      stroke-width: 1.6;
-    }
-    .diamond { fill: #087963; }
-    .dot {
-      fill: #087963;
-      fill-opacity: 0.34;
-    }
-    .dot-faint {
-      fill: #087963;
-      fill-opacity: 0.16;
-    }
     .route-main,
     .route-soft,
     .route-faint {
-      stroke-dasharray: 900;
-      stroke-dashoffset: 900;
-      animation: draw 1.6s ease-out forwards;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
+
+    .route-main {
+      stroke: #087963;
+      stroke-width: 1.85;
+    }
+
+    .route-soft {
+      stroke: #087963;
+      stroke-opacity: 0.34;
+      stroke-width: 1.25;
+    }
+
+    .route-faint {
+      stroke: #087963;
+      stroke-opacity: 0.15;
+      stroke-width: 1.1;
+    }
+
+    .node {
+      fill: #087963;
+    }
+
+    .node-soft {
+      fill: #087963;
+      fill-opacity: 0.36;
+    }
+
+    .node-open {
+      fill: #f8fbfa;
+      stroke: #087963;
+      stroke-width: 1.55;
+    }
+
+    .square {
+      fill: #087963;
+    }
+
+    .square-soft {
+      fill: #087963;
+      fill-opacity: 0.42;
+    }
+
+    .route-main,
+    .route-soft,
+    .route-faint {
+      stroke-dasharray: 1100;
+      stroke-dashoffset: 1100;
+      animation: draw 1.55s ease-out forwards;
+    }
+
     .node,
     .node-soft,
     .node-open,
-    .diamond {
+    .square,
+    .square-soft {
       opacity: 0;
-      animation: appear 0.5s ease-out forwards;
-      animation-delay: 1s;
+      animation: appear 0.45s ease-out forwards;
+      animation-delay: 0.9s;
     }
+
     @keyframes draw {
       to {
         stroke-dashoffset: 0;
       }
     }
+
     @keyframes appear {
       to {
         opacity: 1;
       }
     }
+
     @media (prefers-reduced-motion: reduce) {
       .route-main,
       .route-soft,
@@ -94,206 +136,205 @@
         stroke-dashoffset: 0;
         animation: none;
       }
+
       .node,
       .node-soft,
       .node-open,
-      .diamond {
+      .square,
+      .square-soft {
         opacity: 1;
         animation: none;
       }
     }
   </style>
 
-  <path
-    class="blob"
-    mask="url(#first-blob-fade)"
-    d="M270 70
-       C365 20 505 65 615 10
-       C720 -45 850 5 875 110
-       C900 220 800 275 690 300
-       C575 327 515 400 430 390
-       C345 380 310 310 230 300
-       C150 290 105 225 145 160
-       C175 112 220 95 270 70Z"
-  />
+  <g mask="url(#diagram-fade)">
+    <path
+      fill="url(#blob-top)"
+      d="M304 68
+         C405 18 495 76 626 24
+         C756 -28 928 4 976 112
+         C1027 227 907 304 756 324
+         C626 341 560 407 446 383
+         C341 361 325 292 226 282
+         C132 272 100 190 154 128
+         C188 89 241 91 304 68Z"
+    />
 
-  <path
-    class="blob-2"
-    d="M610 330
-       C690 270 805 250 905 285
-       C1010 320 1020 455 920 505
-       C810 560 660 535 585 480
-       C520 430 545 380 610 330Z"
-  />
+    <path
+      fill="url(#blob-lower)"
+      d="M648 342
+         C755 282 891 263 1005 318
+         C1112 370 1114 496 1006 548
+         C884 607 713 570 618 510
+         C533 456 561 391 648 342Z"
+    />
 
-  <path
-    class="blob"
-    d="M120 300
-       C180 260 230 305 250 355
-       C275 415 345 420 365 485
-       C385 550 280 590 180 540
-       C90 495 55 380 120 300Z"
-  />
+    <path
+      fill="url(#blob-left)"
+      d="M124 326
+         C190 281 254 321 270 380
+         C288 444 362 445 382 507
+         C403 572 294 612 189 558
+         C84 504 52 377 124 326Z"
+    />
 
-  <path
-    class="route-faint"
-    d="M520 -20
-       C520 55 480 75 430 88
-       C380 100 340 125 340 175
-       C340 230 390 230 440 230
-       L565 230
-       C610 230 620 250 620 290
-       L620 345
-       C620 385 645 405 685 405
-       L870 405"
-  />
+    <path
+      class="route-faint"
+      d="M558 -18
+         C559 54 523 84 469 99
+         C411 115 372 143 371 195
+         C370 245 414 254 470 254
+         L604 254
+         C652 254 663 278 663 320
+         L663 374
+         C663 416 690 431 733 431
+         L925 431"
+    />
 
-  <path
-    class="route-faint"
-    d="M675 -15
-       C670 70 620 85 585 115
-       C545 150 555 195 610 195
-       L730 195
-       C775 195 795 220 795 260
-       C795 300 820 320 860 320
-       L980 320"
-  />
+    <path
+      class="route-faint"
+      d="M712 -20
+         C707 57 669 87 625 119
+         C580 152 584 204 641 204
+         L760 204
+         C811 204 833 229 833 274
+         C833 314 861 336 908 336
+         L1045 336"
+    />
 
-  <path
-    class="route-faint"
-    d="M725 72
-       L835 72
-       C885 72 895 40 915 -12"
-  />
+    <path
+      class="route-faint"
+      d="M770 73
+         L893 73
+         C940 73 954 39 976 -18"
+    />
 
-  <path
-    class="route-faint"
-    d="M250 382
-       C310 382 315 425 370 425
-       L460 425"
-  />
+    <path
+      class="route-faint"
+      d="M224 410
+         C292 410 302 454 365 454
+         L474 454"
+    />
 
-  <g transform="translate(260 175)">
-    <circle class="dot-faint" cx="0" cy="0" r="1.4" />
-    <circle class="dot-faint" cx="18" cy="0" r="1.4" />
-    <circle class="dot-faint" cx="36" cy="0" r="1.4" />
-    <circle class="dot-faint" cx="54" cy="0" r="1.4" />
-    <circle class="dot-faint" cx="72" cy="0" r="1.4" />
-    <circle class="dot-faint" cx="90" cy="0" r="1.4" />
-    <circle class="dot-faint" cx="0" cy="18" r="1.4" />
-    <circle class="dot-faint" cx="18" cy="18" r="1.4" />
-    <circle class="dot-faint" cx="36" cy="18" r="1.4" />
-    <circle class="dot-faint" cx="54" cy="18" r="1.4" />
-    <circle class="dot-faint" cx="72" cy="18" r="1.4" />
-    <circle class="dot-faint" cx="90" cy="18" r="1.4" />
+    <path
+      class="route-faint"
+      d="M898 152
+         C941 152 964 128 979 87
+         C1000 30 1041 4 1094 6"
+    />
+
+    <g transform="translate(270 177)" mask="url(#dot-grid-fade)">
+      <rect width="150" height="60" fill="url(#dots-faint)"/>
+    </g>
+
+    <g transform="translate(352 288)" mask="url(#dot-grid-fade)">
+      <rect width="178" height="124" fill="url(#dots-faint)"/>
+    </g>
+
+    <g transform="translate(440 402)" mask="url(#dot-grid-fade)">
+      <rect width="130" height="116" fill="url(#dots-strong)"/>
+    </g>
+
+    <g transform="translate(828 156)" mask="url(#dot-grid-fade)">
+      <rect width="132" height="116" fill="url(#dots-strong)"/>
+    </g>
+
+    <g transform="translate(914 120)" mask="url(#dot-grid-fade)">
+      <rect width="126" height="86" fill="url(#dots-faint)"/>
+    </g>
+
+    <path class="route-faint" d="M840 130 L902 130"/>
+    <circle class="node-open" cx="848" cy="130" r="5.6"/>
+    <circle class="node-soft" cx="866" cy="130" r="2"/>
+    <circle class="node-soft" cx="884" cy="130" r="2"/>
+    <path class="route-faint" d="M898 130 l12 -6 M898 130 l12 6"/>
+
+    <path
+      class="route-main"
+      d="M144 300
+         L292 300
+         C352 300 337 407 414 407
+         L484 407"
+    />
+
+    <path
+      class="route-main"
+      d="M300 258
+         C383 258 363 150 460 150
+         L621 150
+         C670 150 683 177 683 216
+         L683 258
+         C683 292 713 300 749 300
+         L1000 300"
+    />
+
+    <path
+      class="route-main"
+      d="M397 258
+         L566 258
+         L566 358
+         C566 391 593 398 625 398
+         L785 398
+         C824 398 832 426 872 426
+         L1017 426"
+    />
+
+    <path
+      class="route-main"
+      d="M683 258
+         L800 258
+         C846 258 864 281 864 322
+         L864 360
+         C864 394 891 407 929 407
+         L1048 407"
+    />
+
+    <path
+      class="route-soft"
+      d="M621 150
+         L746 150
+         C798 150 819 177 819 218
+         C819 252 846 258 884 258
+         L1024 258"
+    />
+
+    <path
+      class="route-soft"
+      d="M566 358
+         C566 427 598 463 667 463
+         L727 463
+         C771 463 774 493 815 493
+         L995 493"
+    />
+
+    <path
+      class="route-soft"
+      d="M683 216
+         L762 216
+         C799 216 805 239 805 263"
+    />
+
+    <path
+      class="route-soft"
+      d="M214 300
+         C184 300 178 330 154 344
+         C126 361 99 347 93 323
+         C86 294 112 273 148 273"
+    />
+
+    <circle class="node-soft" cx="145" cy="300" r="4.7"/>
+    <circle class="node-open" cx="184" cy="300" r="7"/>
+    <circle class="node" cx="350" cy="258" r="10"/>
+    <circle class="node-open" cx="475" cy="150" r="8"/>
+    <circle class="node-soft" cx="548" cy="150" r="6"/>
+    <circle class="node" cx="566" cy="258" r="7"/>
+
+    <rect class="square" x="616" y="143" width="15" height="15" transform="rotate(45 623.5 150.5)"/>
+    <rect class="square" x="618" y="251" width="15" height="15" transform="rotate(45 625.5 258.5)"/>
+    <rect class="square" x="652" y="391" width="15" height="15" transform="rotate(45 659.5 398.5)"/>
+    <rect class="square" x="802" y="251" width="15" height="15" transform="rotate(45 809.5 258.5)"/>
+    <rect class="square" x="856" y="418" width="17" height="17" transform="rotate(45 864.5 426.5)"/>
+    <rect class="square-soft" x="777" y="390" width="15" height="15" transform="rotate(45 784.5 397.5)"/>
   </g>
-
-  <g transform="translate(365 310)">
-    <circle class="dot" cx="0" cy="0" r="1.5" />
-    <circle class="dot" cx="18" cy="0" r="1.5" />
-    <circle class="dot" cx="36" cy="0" r="1.5" />
-    <circle class="dot" cx="54" cy="0" r="1.5" />
-    <circle class="dot" cx="0" cy="18" r="1.5" />
-    <circle class="dot" cx="18" cy="18" r="1.5" />
-    <circle class="dot" cx="36" cy="18" r="1.5" />
-    <circle class="dot" cx="54" cy="18" r="1.5" />
-    <circle class="dot" cx="0" cy="36" r="1.5" />
-    <circle class="dot" cx="18" cy="36" r="1.5" />
-    <circle class="dot" cx="36" cy="36" r="1.5" />
-    <circle class="dot" cx="54" cy="36" r="1.5" />
-    <circle class="dot" cx="0" cy="54" r="1.5" />
-    <circle class="dot" cx="18" cy="54" r="1.5" />
-    <circle class="dot" cx="36" cy="54" r="1.5" />
-    <circle class="dot" cx="54" cy="54" r="1.5" />
-  </g>
-
-  <g transform="translate(790 175)">
-    <circle class="dot" cx="0" cy="0" r="1.5" />
-    <circle class="dot" cx="18" cy="0" r="1.5" />
-    <circle class="dot" cx="36" cy="0" r="1.5" />
-    <circle class="dot" cx="0" cy="18" r="1.5" />
-    <circle class="dot" cx="18" cy="18" r="1.5" />
-    <circle class="dot" cx="36" cy="18" r="1.5" />
-    <circle class="dot" cx="0" cy="36" r="1.5" />
-    <circle class="dot" cx="18" cy="36" r="1.5" />
-    <circle class="dot" cx="36" cy="36" r="1.5" />
-  </g>
-
-  <path class="route-faint" d="M805 130 L850 130" />
-  <circle class="node-open" cx="812" cy="130" r="6" opacity="0.4" />
-  <circle class="node-soft" cx="828" cy="130" r="2" />
-  <circle class="node-soft" cx="842" cy="130" r="2" />
-
-  <path
-    class="route-main"
-    d="M170 255
-       L290 255
-       C345 255 335 355 405 355
-       L455 355"
-  />
-
-  <path
-    class="route-main"
-    d="M320 220
-       C390 220 370 110 455 110
-       L610 110
-       C655 110 660 140 660 175
-       L660 220
-       C660 250 685 255 715 255
-       L925 255"
-  />
-
-  <path
-    class="route-main"
-    d="M405 220
-       L550 220
-       L550 315
-       C550 345 575 345 600 345
-       L785 345
-       C815 345 830 365 860 365
-       L970 365"
-  />
-
-  <path
-    class="route-main"
-    d="M660 220
-       L765 220
-       C805 220 820 238 820 275
-       L820 315
-       C820 348 845 355 880 355
-       L945 355"
-  />
-
-  <path
-    class="route-soft"
-    d="M550 315
-       C550 375 570 405 630 405
-       L690 405
-       C725 405 725 435 760 435
-       L900 435"
-  />
-
-  <path
-    class="route-soft"
-    d="M610 110
-       L720 110
-       C770 110 780 140 780 180
-       C780 215 805 220 840 220
-       L940 220"
-  />
-
-  <circle class="node-soft" cx="150" cy="255" r="5" />
-  <circle class="node-open" cx="185" cy="255" r="7" />
-
-  <circle class="node" cx="350" cy="220" r="10" />
-  <circle class="node-open" cx="470" cy="110" r="8" />
-  <circle class="node-soft" cx="540" cy="110" r="6" />
-
-  <circle class="node" cx="550" cy="220" r="7" />
-
-  <rect class="diamond" x="612" y="102" width="14" height="14" transform="rotate(45 619 109)" />
-  <rect class="diamond" x="613" y="213" width="14" height="14" transform="rotate(45 620 220)" />
-  <rect class="diamond" x="586" y="338" width="14" height="14" transform="rotate(45 593 345)" />
-  <rect class="diamond" x="785" y="213" width="14" height="14" transform="rotate(45 792 220)" />
-  <rect class="diamond" x="792" y="338" width="18" height="18" transform="rotate(45 801 347)" />
 </svg>
