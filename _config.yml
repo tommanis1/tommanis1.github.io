@@ -1,0 +1,26 @@
+title: Personal Website
+description: Minimal personal website for a computer science PhD student.
+url: "https://tommanis1.github.io"
+baseurl: ""
+
+author:
+  name: Tommaso Pacciani
+  affiliation: University of Amsterdam
+  email: ""
+
+navigation:
+  - title: Publications
+    url: "/#publications"
+  - title: News
+    url: "/news/"
+  - title: Contact
+    url: "/contact/"
+
+markdown: kramdown
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - README.md
+  - vendor/

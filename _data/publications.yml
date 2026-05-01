@@ -1,0 +1,10 @@
+- key: pacciani2025p4ddg
+  authors:
+    - "Tommaso Pacciani"
+    - "Damian Frölich"
+    - "L. Thomas van Binsbergen"
+    - "Chrysa Papagianni"
+  abstract: "Introduces P4DDG, a compiler that generates P4 parser code from data-dependent grammars as an alternative to handwritten state machines. The approach translates grammars into parsing transducers using an extended Thompson construction, then lowers them through an intermediate representation into P4 code."
+  pdf: "/assets/gpce2025.pdf"
+  github: "https://github.com/tommanis1/P4DDG"
+  playground:
