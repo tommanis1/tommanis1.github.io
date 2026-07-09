@@ -36,7 +36,7 @@ permalink: /
     </div>
   </div>
   <div class="intro-art" aria-hidden="true">
-    <span></span>
+    {% include hero-network.svg %}
   </div>
 </section>
 
