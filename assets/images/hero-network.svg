@@ -1,20 +1,23 @@
 <svg width="1040" height="560" viewBox="0 0 1040 560" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="blob-top" cx="50%" cy="45%" r="70%">
-      <stop offset="0" stop-color="#087963" stop-opacity="0.105"/>
-      <stop offset="0.62" stop-color="#087963" stop-opacity="0.06"/>
+      <stop offset="0" stop-color="#087963" stop-opacity="0.075"/>
+      <stop offset="0.52" stop-color="#087963" stop-opacity="0.04"/>
+      <stop offset="0.8" stop-color="#087963" stop-opacity="0.015"/>
       <stop offset="1" stop-color="#087963" stop-opacity="0"/>
     </radialGradient>
 
     <radialGradient id="blob-lower" cx="56%" cy="52%" r="72%">
-      <stop offset="0" stop-color="#087963" stop-opacity="0.13"/>
-      <stop offset="0.66" stop-color="#087963" stop-opacity="0.065"/>
+      <stop offset="0" stop-color="#087963" stop-opacity="0.09"/>
+      <stop offset="0.54" stop-color="#087963" stop-opacity="0.047"/>
+      <stop offset="0.82" stop-color="#087963" stop-opacity="0.018"/>
       <stop offset="1" stop-color="#087963" stop-opacity="0"/>
     </radialGradient>
 
     <radialGradient id="blob-left" cx="50%" cy="50%" r="72%">
-      <stop offset="0" stop-color="#087963" stop-opacity="0.09"/>
-      <stop offset="0.62" stop-color="#087963" stop-opacity="0.045"/>
+      <stop offset="0" stop-color="#087963" stop-opacity="0.065"/>
+      <stop offset="0.52" stop-color="#087963" stop-opacity="0.033"/>
+      <stop offset="0.8" stop-color="#087963" stop-opacity="0.012"/>
       <stop offset="1" stop-color="#087963" stop-opacity="0"/>
     </radialGradient>
 
@@ -163,11 +166,11 @@
 
     <path
       fill="url(#blob-lower)"
-      d="M648 342
-         C755 282 891 263 1005 318
-         C1112 370 1114 496 1006 548
-         C884 607 713 570 618 510
-         C533 456 561 391 648 342Z"
+      d="M704 392
+         C804 340 938 332 1028 382
+         C1118 432 1096 530 991 562
+         C868 600 725 581 639 523
+         C566 474 606 444 704 392Z"
     />
 
     <path

@@ -5,18 +5,18 @@ baseurl: ""
 
 author:
   name: Tommaso Pacciani
-  initials: TP
   role: PhD Student
   affiliation: University of Amsterdam
   email: ""
-  github: "https://github.com/tommanis1"
+  github: "https://github.com/TommasoPacciani"
   scholar: "https://scholar.google.com/citations?user=TuUeAjcAAAAJ&hl=en&oi=sra"
 
 navigation:
   - title: Publications
     url: "/#publications"
-  - title: News
-    url: "/news/"
+  # News is hidden from the nav. Uncomment to restore (page still lives in news.md).
+  # - title: News
+  #   url: "/news/"
   - title: Contact
     url: "/contact/"
 

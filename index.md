@@ -11,7 +11,7 @@ permalink: /
     <span class="title-rule" aria-hidden="true"></span>
     <p class="lead">{{ site.author.affiliation }}</p>
     <p class="intro-bio">
-      I work on programming language theory and systems, with a focus on domain-specific languages, parsing, and compiling for high-performance environments.
+      I'm a PhD student at the University of Amsterdam applying programming-language theory and formal methods to P4 programmable data planes. Working across the <a href="https://www.mns-research.nl/">MNS</a> and <a href="https://cci-research.nl/">CCI</a> groups, I build domain-specific languages, compilers, interpreters, and verifiers for programmable networking. My interests span Haskell, language design, formal methods, and type systems.
     </p>
     <div class="intro-links" aria-label="Contact links">
       {% if site.author.email and site.author.email != "" %}
