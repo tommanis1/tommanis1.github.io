@@ -5,3 +5,17 @@ _site/
 .bundle/
 vendor/
 _data/publications_resolved.yml
+
+# Local design/dev artifacts (kept locally, never published)
+/design.png
+/old design.png
+/outer_curve_fit.png
+/mobile_screenshot.png
+/site_screenshot.png
+/site_reference_blend.png
+/site_wave_red_mask.png
+/wave_overlay_compare.png
+/preview.html
+/dark_audit/
+# Dev tooling (the build only uses scripts/build_publications.rb)
+scripts/*.py
