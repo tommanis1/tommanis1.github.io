@@ -60,7 +60,7 @@ permalink: /
         </svg>
         <div class="publication-body">
           <h3 class="publication-title">
-            {% if publication.url %}
+            {% if publication.url and publication.preprint != true %}
               <a href="{{ publication.url }}">{{ publication.title }}</a>
             {% else %}
               {{ publication.title }}
@@ -80,7 +80,9 @@ permalink: /
           {% endif %}
           {% if publication.doi or publication.pdf or publication.github or publication.playground %}
             <p class="publication-links">
-              {% if publication.doi %}
+              {% if publication.doi and publication.preprint %}
+                <span class="publication-doi">DOI: {{ publication.doi }}</span>
+              {% elsif publication.doi %}
                 <a href="https://doi.org/{{ publication.doi }}">DOI: {{ publication.doi }}</a>
               {% endif %}
               {% if publication.pdf %}

@@ -429,6 +429,12 @@ h3 {
   padding-bottom: 0.08rem;
 }
 
+.publication-links .publication-doi {
+  color: var(--muted);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
 .publication-links .icon {
   width: 1.15rem;
   height: 1.15rem;

@@ -1,3 +1,9 @@
+- key: pacciani2026p4check
+  preprint: true
+  venue: "8th European P4 Workshop (EuroP4 '26), to appear"
+  abstract: "Introduces P4Check, a tool that combines temporal verification with statement-level debugging for stateful P4 programs. A single definitional interpreter runs programs symbolically for verification and concretely to replay counterexamples in an interactive debugger."
+  pdf: "/assets/europ4-2026-preprint.pdf"
+  github: "https://github.com/TommasoPacciani/P4Check"
 - key: pacciani2025p4ddg
   authors:
     - "Tommaso Pacciani"
